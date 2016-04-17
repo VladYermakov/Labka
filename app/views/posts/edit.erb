@@ -1,0 +1,11 @@
+<h3>Edit</h3>
+<a href="/posts/<%= @post.id %>/delete/">delete this post</a>
+
+<form action="/posts/<%= @post.id %>/edit/" method="post">
+  <input name="_method" type="hidden" value="put" />
+  <label for="title"><strong>Title:</strong></label>
+  <input type="text" name="post[title]" id="title" value="<%= @post.title %>">
+  <label for="content"><strong>Post content:</strong></label>
+  <textarea id="content" name="post[content]" style="height: 250px;"><%= @post.content %></textarea>
+  <input id="post_submit" name="commit" type="submit" value="Save">
+</form>
