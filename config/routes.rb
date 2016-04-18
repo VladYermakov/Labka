@@ -65,3 +65,8 @@ delete '/posts/:id/' do
   Post.find(params[:id]).destroy
   redirect to '/'
 end
+
+get 'users' do
+  @users User.all
+  erb :"/users/index"
+end
